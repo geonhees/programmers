@@ -1,15 +1,14 @@
+using System;
+
 public class Solution {
-    public static int[] solution(long n) {
+    public int[] solution(long n) {
         int length = n.ToString().Length;
-        int[] answer = new int[length] {};
-        int index = 0;
-        while(n != 0)
-        {
-            answer[index] = Convert.ToInt32(n % 10);
+        int[] answer = new int[length];
+        for(int i=0; i<length; i++){
+            answer[i] = (int)(n % 10);
             n /= 10;
-            index++;
         }
-        return answer.ToArray();
+        return answer;
     }
 
     static void Main()
